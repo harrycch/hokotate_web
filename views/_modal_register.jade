@@ -1,0 +1,16 @@
+#register-modal.modal.fade(style='display: none;')
+    .modal-dialog.modal-sm
+      .modal-content
+        .modal-header
+          button(type="button",class="close",data-dismiss="modal"): span= "×"
+          h4= t("ns.general:register.title")
+        .modal-body
+          form
+            div.form-group: input.form-control(type='text', name='username', placeholder= t("ns.general:register.placeholder_username"))
+            div.form-group: input.form-control(type='password', name='password', placeholder= t("ns.general:register.placeholder_password"))
+            div.form-group: input.form-control(type='password', name='password_confirm', placeholder= t("ns.general:register.placeholder_password_confirm"))
+            div.form-group: input.form-control(type='text', name='preferred_name', placeholder= t("ns.general:register.placeholder_preferred_name"))
+            div.form-group: span.message.text-danger(style="display:none")
+            input.btn.btn-submit(type='button', name='register', value= t("ns.general:register.btn_register"),data-loading-text=t("ns.general:register.loading"))
+        .modal-footer
+          a(href='#',data-toggle="modal",data-target="#login-modal")= t("ns.general:register.link_login")

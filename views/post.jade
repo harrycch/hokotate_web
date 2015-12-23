@@ -1,0 +1,18 @@
+extends _layout
+block variables
+	- var categories = (cats || [])
+
+block content
+	div.container#content
+		div.row
+			div.col-md-8
+				div.row
+					if post
+						include _post
+					else
+						div.col-md-offset-2.col-md-8
+							h1= t("ns.post:post_not_found")
+			div.col-md-4
+
+block javascript
+	//- script(type="text/javascript", src="/javascripts/index.js")

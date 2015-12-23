@@ -1,0 +1,38 @@
+#submit-modal.modal.fade(style='display: none;')
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button(type="button",class="close",data-dismiss="modal"): span= "×"
+          h4= t("ns.post:form.title")
+        .modal-body
+          form(action="/submit" enctype="multipart/form-data" method="POST")
+            div.form-group
+              label= t("ns.post:form.label_title")
+              input.form-control(type='text', name='title')
+            div.form-group
+              label= t("ns.post:form.label_hoko")
+              input.form-control(type='text', name='hoko')
+              p.help-block= t("ns.post:form.hint_tags")
+            div.form-group
+              label= t("ns.post:form.label_hoko_img")
+              input.form-control(type='file', name='hoko_img')
+            div.form-group
+              label= t("ns.post:form.label_tate")
+              input.form-control(type='text', name='tate')
+              p.help-block= t("ns.post:form.hint_tags")
+            div.form-group
+              label= t("ns.post:form.label_tate_img")
+              input.form-control(type='file', name='tate_img')
+            div.form-group
+              label= t("ns.post:form.label_answer")
+              input.form-control(type='text', name='answer')
+              p.help-block= t("ns.post:form.hint_tags")
+            div.form-group
+              label= t("ns.post:form.label_tags")
+              input.form-control(type='text', name='tags')
+              p.help-block= t("ns.post:form.hint_tags")
+            div.form-group
+              label= t("ns.post:form.label_days")
+              input.form-control(type='text', name='days')
+            div.form-group: span.message.text-danger(style="display:none")
+            input.btn.btn-submit(type='submit', name='submit', value= t("ns.post:form.btn_submit"))

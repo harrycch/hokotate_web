@@ -1,0 +1,107 @@
+doctype transitional
+html(xmlns='http://www.w3.org/1999/xhtml')
+head
+  title
+    |     
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+    meta(name='robots', content='noindex,nofollow')
+    meta(property='og:title', content='My First Campaign')
+    link(rel='stylesheet', href='/stylesheets/mail.css')
+  |   
+  body(style='margin: 0;mso-line-height-rule: exactly;padding: 0;min-width: 100%;background-color: #fbfbfb')   
+    center.wrapper(style='display: table;table-layout: fixed;width: 100%;min-width: 620px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;background-color: #fbfbfb')
+      table.gmail(style='border-collapse: collapse;border-spacing: 0;width: 650px;min-width: 650px')
+          tr
+            td(style='padding: 0;vertical-align: top;font-size: 1px;line-height: 1px') &nbsp;
+      |       
+      table.preheader.centered(style='border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto')
+        tbody
+          tr
+            td(style='padding: 0;vertical-align: top')
+              table(style='border-collapse: collapse;border-spacing: 0;width: 602px')
+                tbody
+                  tr
+                  tr
+                    td.title(style='padding: 0;vertical-align: top;padding-top: 10px;padding-bottom: 12px;font-size: 12px;line-height: 21px;text-align: left;color: #999;font-family: Georgia,serif')= t("ns.mailer:reset_password.title")
+      |       
+      table.header.centered(style='border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto;width: 602px')
+        tbody
+          tr
+            td.logo(style='padding: 0;vertical-align: top;mso-line-height-rule: at-least;padding-top: 6px;padding-bottom: 20px')
+              #emb-email-header.logo-center(style='font-size: 26px;font-weight: 700;letter-spacing: -0.02em;line-height: 32px;color: #41637e;font-family: sans-serif;text-align: center', align='center')
+                img(style='border: 0;-ms-interpolation-mode: bicubic;display: block;Margin-left: auto;Margin-right: auto;', src="http://"+req.headers.host+'/images/hokotate_logo.png', alt='', height='128')
+      |       
+      |           
+      table.border(style='border-collapse: collapse;border-spacing: 0;font-size: 1px;line-height: 1px;background-color: #e9e9e9;Margin-left: auto;Margin-right: auto', width='602')
+        tbody
+          tr
+            td(style='padding: 0;vertical-align: top') &nbsp;
+      |         
+      |           
+      table.centered(style='border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto')
+        tbody
+          tr
+            td.border(style='padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #e9e9e9;width: 1px') &nbsp;
+            |               
+            td(style='padding: 0;vertical-align: top')
+              table.one-col(style='border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto;width: 600px;background-color: #ffffff;font-size: 14px;table-layout: fixed', emb-background-style='')
+                tbody
+                  tr
+                    td.column(style='padding: 0;vertical-align: top;text-align: left')
+                      div
+                        .column-top(style='font-size: 32px;line-height: 32px') &nbsp;
+                      |                         
+                      table.contents(style='border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%')
+                        tbody
+                          tr
+                            td.padded(style='padding: 0;vertical-align: top;padding-left: 32px;padding-right: 32px;word-break: break-word;word-wrap: break-word')
+                              h2(style='Margin-top: 0;color: #555;font-style: italic;font-weight: normal;font-size: 26px;line-height: 32px;Margin-bottom: 20px;font-family: Georgia,serif')= t("ns.mailer:reset_password.title")
+                              p(style='Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 16px;line-height: 25px;Margin-bottom: 24px')
+                                =t("ns.mailer:reset_password.message")
+                                br
+                                a(style='transition: opacity 0.2s ease-in;text-decoration: underline;color: #41637e', data-emb-href-display='undefined', href=url)= url
+                      |                       
+                      |                       
+                      .column-bottom(style='font-size: 8px;line-height: 8px') &nbsp;
+            |               
+            td.border(style='padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #e9e9e9;width: 1px') &nbsp;
+      |         
+      |           
+      table.border(style='border-collapse: collapse;border-spacing: 0;font-size: 1px;line-height: 1px;background-color: #e9e9e9;Margin-left: auto;Margin-right: auto', width='602')
+        tbody
+          tr
+            td(style='padding: 0;vertical-align: top') &nbsp;
+      |         
+      |       
+      .spacer(style='font-size: 1px;line-height: 32px;width: 100%') &nbsp;
+      |       
+      table.footer.centered(style='border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto;width: 602px')
+        tbody
+          tr
+            td.social(style='padding: 0;vertical-align: top;padding-top: 32px;padding-bottom: 22px', align='center')
+          |         
+          tr
+            td.border(style='padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #e9e9e9;width: 1px') &nbsp;
+          |         
+          tr
+            td(style='padding: 0;vertical-align: top')
+              table(style='border-collapse: collapse;border-spacing: 0')
+                tbody
+                  tr
+                    td.address(style='padding: 0;vertical-align: top;width: 250px;padding-top: 32px;padding-bottom: 64px')
+                      table.contents(style='border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%')
+                        tbody
+                          tr
+                            td.padded(style='padding: 0;vertical-align: top;padding-left: 0;padding-right: 10px;word-break: break-word;word-wrap: break-word;text-align: left;font-size: 12px;line-height: 20px;color: #999;font-family: Georgia,serif')
+                              div=t("ns.mailer:company_name")
+                    //- |                 
+                    //- td.subscription(style='padding: 0;vertical-align: top;width: 350px;padding-top: 32px;padding-bottom: 64px')
+                    //-   table.contents(style='border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%')
+                    //-     tbody
+                    //-       tr
+                    //-         td.padded(style='padding: 0;vertical-align: top;padding-left: 10px;padding-right: 0;word-break: break-word;word-wrap: break-word;font-size: 12px;line-height: 20px;color: #999;font-family: Georgia,serif;text-align: right')
+                    //-           div
+                    //-             span.block
+                    //-             |                           
+                    //-             span.block
+                    //-               unsubscribe(style='font-weight:bold;text-decoration:none;') Unsubscribe

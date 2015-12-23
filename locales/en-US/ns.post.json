@@ -1,0 +1,30 @@
+{
+	"vote_me": "Vote me!",
+	"comment": "__count__ comment",
+	"comment_plural": "__count__ comments",
+	"more_comment": "Read more comments...",
+	"placeholder_comment": "Write comment...",
+	"post_not_found": "Post not found",
+	"no_liked": "You have not yet liked any posts.",
+	"no_voted": "You have not yet voted in any posts.",
+	"expired": "Ended",
+	"form": {
+		"title": "Submit new HokoTate",
+		"label_title": "Title",
+		"label_hoko": "Hoko",
+		"hint_hoko": "(Blue side)",
+		"label_tate": "Tate",
+		"hint_tate": "(Red side)",
+		"label_hoko_img": "Hoko Image",
+		"label_tate_img": "Tate Image",
+		"label_tate_img": "Tate Image",
+		"label_answer": "Answer",
+		"hint_answer": "Will appears when the voting ends. Can be empty.",
+		"label_days": "Number of voting days",
+		"hint_days": "Must be positive integer. Default 30 if leave empty.",
+		"label_tags": "Tags",
+		"hint_tags": "Separated by commas. e.g. 'funny,interesting,omg'",
+		"label_category": "Category",
+		"btn_submit": "Submit"
+	}
+}

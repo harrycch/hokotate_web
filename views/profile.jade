@@ -1,0 +1,86 @@
+extends _layout
+block variables
+	- var categories = (cats || [])
+
+block content
+	div.container#content
+		div.row
+			div.col-md-2.col-md-offset-1
+				div.well.well-sm
+					ul.nav.nav-pills.nav-stacked
+						li.active: a(href="#tab-profile",data-toggle="tab")= t("ns.profile:tabs.profile")
+						li: a.tab-reload(href="#tab-liked",data-toggle="tab",data-link="liked")= t("ns.profile:tabs.liked_posts")
+						li: a.tab-reload(href="#tab-voted",data-toggle="tab",data-link="voted")= t("ns.profile:tabs.voted_posts")
+			div.col-md-8
+				div.tab-content
+					div.tab-pane.fade.in.active#tab-profile
+						div.well
+							form.form-horizontal(method="POST")
+								div.form-group: span.col-sm-12.message.text-danger(style= error ? "":"display:none")= error || ""
+								div.form-group
+									label.col-sm-3.control-label= t("ns.profile:profile.label_email")
+									div.col-sm-9
+										p.form-control-static= current_user.username
+								div.form-group
+									label.col-sm-3.control-label= t("ns.profile:profile.label_preferredName")
+									div.col-sm-9
+										input.form-control(type="text",name="preferredName",value=current_user.preferredName || "")
+								div.form-group
+									label.col-sm-3.control-label= t("ns.profile:profile.label_old_password")
+									div.col-sm-9
+										input.form-control(type="password",name="password")
+								div.form-group
+									label.col-sm-3.control-label= t("ns.profile:profile.label_password")
+									div.col-sm-9
+										input.form-control(type="password",name="passwordNew")
+								div.form-group
+									label.col-sm-3.control-label= t("ns.profile:profile.label_password_confirm")
+									div.col-sm-9
+										input.form-control(type="password",name="passwordNewConfirm")
+								div.form-group
+									div.col-sm-offset-3.col-sm-9
+										span.help-block= t("ns.profile:profile.hint_change_password")
+								div.form-group
+									div.col-sm-offset-3.col-sm-9
+										button.btn.btn-submit(type="submit")= t("ns.profile:profile.btn_submit")
+
+						div.well
+							form.form-horizontal
+								div.form-group
+									label.col-sm-5.control-label= t("ns.profile:profile.label_facebook")
+									label.col-sm-3.control-label= t("ns.profile:profile.status_"+(current_user.facebookId?"connected":"not_connected"))
+									div.col-sm-4
+										if current_user.facebookId
+											button.btn.btn-submit.btn-block#btn-connect-facebook(type="button",data-connect="disconnect")= t("ns.profile:profile.btn_disconnect")
+										else
+											button.btn.btn-submit.btn-block#btn-connect-facebook(type="button",data-connect="connect")= t("ns.profile:profile.btn_connect")
+								div.form-group
+									label.col-sm-5.control-label= t("ns.profile:profile.label_googleplus")
+									label.col-sm-3.control-label= t("ns.profile:profile.status_"+(current_user.googleplusId?"not_connected":"not_connected"))
+									div.col-sm-4
+										if current_user.googleplusId
+											button.btn.btn-submit.btn-block#btn-connect-google(type="button",data-connect="disconnect")= t("ns.profile:profile.btn_disconnect")
+										else
+											button.btn.btn-submit.btn-block#btn-connect-google(type="button",data-connect="connect")= t("ns.profile:profile.btn_connect")
+					div.tab-pane.fade#tab-liked
+						div.row
+							.infinite-scroll
+					div.tab-pane.fade#tab-voted
+						div.row
+							.infinite-scroll
+
+					//- div.tab-pane.fade#tab-liked
+					//- 	div.row.infinite-scroll(data-link="liked")
+					//- 		each post in liked
+					//- 			include _post
+					//- 		a.scroll-next(href="/more/liked?page=2")
+					//- 		//- div.col-xs-12.no-post(style=(liked.length>0)?"":"display:none"): div.well: span.no_post= t('ns.post:no_liked')
+					//- div.tab-pane.fade#tab-voted
+					//- 	div.row.infinite-scroll(data-link="voted")
+					//- 		each post in voted
+					//- 			include _post
+					//- 		a.scroll-next(href="/more/voted?page=2")
+					//- 		//- div.col-xs-12.no-post(style=(voted.length>0)?"":"display:none"): div.well: span.no_post= t('ns.post:no_voted')
+
+block javascript
+	//- script(type="text/javascript", src="/javascripts/controller/index.js")

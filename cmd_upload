@@ -1,0 +1,12 @@
+scp -r -P 8022 ~/Development/Projects/hokotate/Server/public/javascripts uthinktech@uthink-tech.com:/home/uthinktech/hokotate/dev/public
+scp -r -P 8022 ~/Development/Projects/hokotate/Server/public/stylesheets uthinktech@uthink-tech.com:/home/uthinktech/hokotate/dev/public
+scp -r -P 8022 ~/Development/Projects/hokotate/Server/public/images uthinktech@uthink-tech.com:/home/uthinktech/hokotate/dev/public
+scp -r -P 8022 ~/Development/Projects/hokotate/Server/models uthinktech@uthink-tech.com:/home/uthinktech/hokotate/dev
+scp -r -P 8022 ~/Development/Projects/hokotate/Server/routes uthinktech@uthink-tech.com:/home/uthinktech/hokotate/dev
+scp -r -P 8022 ~/Development/Projects/hokotate/Server/views uthinktech@uthink-tech.com:/home/uthinktech/hokotate/dev
+scp -r -P 8022 ~/Development/Projects/hokotate/Server/app.js uthinktech@uthink-tech.com:/home/uthinktech/hokotate/dev
+scp -r -P 8022 ~/Development/Projects/hokotate/Server/package.json uthinktech@uthink-tech.com:/home/uthinktech/hokotate/dev
+scp -r -P 8022 ~/Development/Projects/hokotate/Server/migrations uthinktech@uthink-tech.com:/home/uthinktech/hokotate/dev
+scp -r -P 8022 ~/Development/Projects/hokotate/Server/locales uthinktech@uthink-tech.com:/home/uthinktech/hokotate/dev
+scp -r -P 8022 ~/Development/Projects/hokotate/Server/core uthinktech@uthink-tech.com:/home/uthinktech/hokotate/dev
+scp -r -P 8022 ~/Development/Projects/hokotate/Server/bin uthinktech@uthink-tech.com:/home/uthinktech/hokotate/dev

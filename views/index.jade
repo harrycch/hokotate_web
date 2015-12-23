@@ -1,0 +1,17 @@
+extends _layout
+block variables
+	- var categories = (cats || [])
+
+block content
+	div.container#content
+		div.row
+			div.col-md-8
+				div.row
+					div.infinite-scroll
+						each post in posts
+							include _post
+						a.scroll-next(href="/more/"+nextLink)
+			div.col-md-4
+
+block javascript
+	//- script(type="text/javascript", src="/javascripts/controller/index.js")

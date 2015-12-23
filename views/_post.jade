@@ -1,0 +1,75 @@
+- var votable = moment(post.expireAt).isAfter()
+
+mixin imgScale(path, scale)
+	img.scale( data-scale=scale,data-align="center",src=path)
+
+div.col-md-12.post(class=votable? 'votable':'results', data-id= post.id)
+	div.row
+		div.col-xs-12
+			h3.post-title.text-center: a(href="/details/"+post.id)= post.title
+		div.col-xs-12
+			div.post-details
+				div
+					//- span= post.User.preferredName || post.User.username
+					a.label.label-warning(href='/category/'+post.Category.id)= post.Category["name_"+i18n.lng()]
+					span.label.label-default.countdown(data-expire=moment(post.expireAt).toISOString(),data-expired=t("ns.post:expired"))= votable? moment(post.expireAt).fromNow() : t("ns.post:expired")
+				div
+					//- - var tagsArray = post.tags.split(',')
+					each tag in post.tags
+						if tag != ""
+							a.label.label-success.label-tag(href='/search?tags='+tag)= "#"+tag 
+		div.col-xs-12
+			div.post-vote
+				- var hokoClass = (post.hokoImg? " ": " no-img ")+((post.Voter && post.Voter.VoterVoted.vote=="hoko") ? " active " : " ")
+				div.post-box.post-box-hoko(data-vote="hoko",data-toggle=votable?"tooltip":"",data-placement="bottom",title= t('ns.post:vote_me'),class= hokoClass)
+					if post.hokoImg
+						+imgScale("/uploads/user/"+post.User.id+"/"+post.hokoImg,"best-fit")
+					else
+						+imgScale("/images/img_none.png","fill")
+					div.box-overlay.box-overlay-hoko
+					div.box-text.textfill: span= post.hoko
+				div.post-box-between: span= "vs"
+				- var tateClass = (post.tateImg? " ": " no-img ")+((post.Voter && post.Voter.VoterVoted.vote=="tate") ? " active " : " ")
+				div.post-box.post-box-tate.right(data-vote="tate",data-toggle=votable?"tooltip":"",data-placement="bottom",title= t('ns.post:vote_me'),class= tateClass)
+					if post.tateImg
+						+imgScale("/uploads/user/"+post.User.id+"/"+post.tateImg,"best-fit")
+					else
+						+imgScale("/images/img_none.png","fill")
+					div.box-overlay.box-overlay-tate
+					div.box-text.textfill: span= post.tate
+				
+		if post.hokoCount!=null && post.tateCount!=null && !votable
+			div.col-xs-12
+				div.progress.post-bar
+					- var totalCount = (parseInt(post.hokoCount) + parseInt(post.tateCount))
+					- var hokoPercentage = totalCount==0 ? 50 : (parseInt(post.hokoCount))/totalCount*100
+					- var tatePercentage = 100-hokoPercentage
+					div.progress-bar.progress-bar-primary.textfill(style="width: "+hokoPercentage+"%"): span= post.hokoCount
+					div.progress-bar.progress-bar-danger.textfill(style="width: "+tatePercentage+"%"): span= post.tateCount
+				if post.answer
+					div.post-answer.well
+						strong= post.answer
+		div.col-xs-12
+			div.post-feedback
+				div.post-like(class= post.Liker ? "active" : "")
+				div.post-comment(data-count=post.commentCount,data-singular=t("ns.post:comment", {count:""}),data-plural=t("ns.post:comment_plural", {count:""})): a(href="/details/"+post.id)= t("ns.post:comment", { count: post.commentCount })
+			if comments
+				div.post-comment-list
+					div.comment-row
+						textarea.comment-box.form-control(name="comment",placeholder=t('ns.post:placeholder_comment') )
+					div.comment-row.comment-real-row.template
+						div
+							span.comment-user
+							small.comment-time
+						span.comment-content
+					each comment in comments
+						div.comment-row.comment-real-row
+							div
+								span.comment-user= comment.User.preferredName || comment.User.username
+								small.comment-time= moment(comment.createdAt).fromNow()
+							span.comment-content= comment.message
+					if hasNext==true
+						div.comment-row
+							span.comment-more(data-nextpage=2)= t('ns.post:more_comment')
+							div.progress.loading-more
+								div.progress-bar.progress-bar-warning.progress-bar-striped.active(style="width:100%")

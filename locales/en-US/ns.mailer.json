@@ -1,0 +1,11 @@
+{
+	"company_name": "HokoxTate @uThink Technology Limited",
+	"account_confirmation": {
+		"title": "Account Confirmation",
+		"message" : "By clicking the following path, your account will be activated:"
+	},
+	"reset_password": {
+		"title": "Reset Password",
+		"message": "Please reset your password by the following path:"
+	}
+}

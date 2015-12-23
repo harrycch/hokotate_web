@@ -1,0 +1,16 @@
+{
+	"app": {
+		"name": "矛x盾",
+		"default_user": "路人"
+	},
+	"header": {
+		"new_votable":"最新矛盾",
+		"pop_votable":"熱門矛盾",
+		"almost":"將近完結",
+		"new_results":"最新結果",
+		"pop_results": "熱門結果",
+		"categories": "類別",
+		"login": "登入",
+		"register": "註冊"
+	}
+}

@@ -1,0 +1,30 @@
+block variables
+doctype html
+html
+	head
+		title= t('ns.general:app.name')
+		meta(name="google-signin-client_id",content="YOUR_CLIENT_ID.apps.googleusercontent.com")
+		link(rel='shortcut icon', type='image/jpeg', href='')
+		link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/stylesheets/vendor/jquery.shining.min.css')
+		link(rel='stylesheet', href='/stylesheets/vendor/bootstrap-social.css')
+		link(rel='stylesheet', href='/stylesheets/vendor/font-awesome-4.3.0/css/font-awesome.min.css')
+		link(rel='stylesheet', href='/stylesheets/vendor/sweet-alert.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
+	body(style='visibility:hidden')
+		div#fb-root
+		include _header
+		include _alert
+		block content
+		div.bottom-space
+		unless current_user
+			unless startscript=="controller/login"
+				include _modal_login
+			unless startscript=="controller/register"
+				include _modal_register
+		//- unless startscript=='controller/submit'
+			//- include _modal_submit
+	
+	script(type="text/javascript", src="/javascripts/require.config.js")
+	script(type="text/javascript", src="/javascripts/require.js", data-main=startscript)
+	block javascript

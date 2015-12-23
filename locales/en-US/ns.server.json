@@ -1,0 +1,27 @@
+{
+	"error":{
+		"USR001": "Wrong email or password",
+		"USR002": "Password Confirmation Invalid",
+		"USR003": "Email has already been used",
+		"USR004": "Please login",
+		"USR005": "Password length too short. Must be 8-20 characters and must not contains invalid characters.",
+		"USR006": "Invalid email",
+		"USR007": "Please activate your account",
+		"USR008": "Sending email failed",
+		"USR009": "User not found",
+		"USR010": "The social network account has already been linked to an existing account.",
+		"USR011": "Wrong Password",
+		"USR012": "You cannot disconnect from this social network since you have not yet connected to any accounts in this social network.",
+		"POS001": "Category not found",
+		"POS002": "Invalid days",
+		"POS003": "Poll not found",
+		"POS004": "Invalid Vote",
+		"POS005": "You have already voted in this poll",
+		"POS006": "Poll expired",
+		"FIL001": "Wrong File Type",
+		"FIL002": "File size too large (max: 5MB)",
+		"FIL003": "File upload Error",
+		"SYS001": "System Error",
+		"SYS002": "Invalid Parameters"
+	}
+}

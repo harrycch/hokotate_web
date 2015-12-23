@@ -1,0 +1,7 @@
+if current_user && !current_user.isActivated
+	div.alert.alert-warning(style="text-align:center")
+		= t("ns.general:email_pre_confirm.message")
+		a#btn-resend-confirmation-email.alert-link(href="#")= t("ns.general:email_pre_confirm.btn_resend") 
+
+if alert_message
+	div.alert.alert-info(style="text-align:center")= alert_message

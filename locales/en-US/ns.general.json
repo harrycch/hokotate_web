@@ -1,0 +1,68 @@
+{
+	"app": {
+		"name": "Hoko x Tate",
+		"default_user": "Anonymous"
+	},
+	"header": {
+		"new_votable":"Newest",
+		"pop_votable":"Popular",
+		"almost":"Almost",
+		"new_results":"Newest Results",
+		"pop_results": "Popular Results",
+		"categories": "Categories ",
+		"login": "Login",
+		"register": "Register",
+		"logout": "Logout",
+		"placeholder_search": "Search by tags",
+		"welcome": "Welcome ",
+		"submit": "Submit",
+		"profile": "Profile"
+	},
+	"login": {
+		"title": "Login to Your Account",
+		"placeholder_username": "Email",
+		"placeholder_password": "Password",
+		"btn_login": "Login",
+		"link_register": "Register",
+		"link_forgetpassword": "Forgot Password",
+		"loading": "Loading..."
+	},
+	"register": {
+		"title": "Register a new Account",
+		"placeholder_username": "Email",
+		"placeholder_password": "Password",
+		"placeholder_password_confirm": "Password Confirmation",
+		"placeholder_preferred_name": "Preferred Name",
+		"btn_register": "Register",
+		"loading": "Loading...",
+		"link_login": "Login"
+	},
+	"email_pre_confirm": {
+		"message": "Please verify your email address. If you cannot receive it, we can resend it. ",
+		"btn_resend": "Resend"
+	},
+	"email_confirm": {
+		"title": "Email Confirmation",
+		"success": "You have successfully activated your account. ",
+		"success_login_message": "You can login ",
+		"success_login": "here",
+		"error": "Activation error: __error__"
+	},
+	"forget_password": {
+		"title": "Forget Password",
+		"placeholder_username": "Enter your email address",
+		"btn_send": "Send",
+		"success": "You will receive a email for resetting password shortly."
+	},
+	"reset_password": {
+		"title": "Reset Password",
+		"placeholder_new_password": "New Password",
+		"placeholder_new_password_confirm": "Confirm New Password",
+		"btn_reset": "Reset Password",
+		"success": "You have successfully reset your password."
+	},
+	"social_network": {
+		"facebook_login": "Sign in with Facebook",
+		"google_login": "Sign in with Google"
+	}
+}

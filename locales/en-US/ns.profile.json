@@ -1,0 +1,24 @@
+{
+	"tabs":{
+		"profile": "Profile",
+		"social_network": "Social Network",
+		"liked_posts": "Liked Posts",
+		"voted_posts": "Voted Posts"
+	},
+	"profile": {
+		"label_email": "Email",
+		"label_preferredName": "Name",
+		"label_old_password": "Current Password",
+		"label_password": "New Password",
+		"label_password_confirm": "Confirm new Password",
+		"label_facebook": "Facebook Connection Status:",
+		"label_googleplus": "Google+ Connection Status:",
+		"success": "You have successfully updated your account.",
+		"btn_submit": "Update",
+		"btn_connect": "Connect",
+		"btn_disconnect": "Disconnect",
+		"status_connected": "Connected",
+		"status_not_connected": "Not connected",
+		"hint_change_password": "Note: Enter current password if you would like to change your password"
+	}
+}

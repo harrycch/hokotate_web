@@ -1,0 +1,21 @@
+extends _layout
+block variables
+	- var categories = (cats || [])
+
+block content
+	div.container#content
+		div.row
+			div.col-md-8.col-md-offset-2
+				div.panel.panel-default
+					div.panel-heading
+						h4= t("ns.general:email_confirm.title")
+					div.panel-body
+						if !error
+							h5
+								= t("ns.general:email_confirm.success")
+								unless current_user
+									= t("ns.general:email_confirm.success_login_message")
+									a(href="/login")= t("ns.general:email_confirm.success_login")
+						else
+							h5= t("ns.general:email_confirm.error", {error:t("ns.server:error."+error)})
+block javascript

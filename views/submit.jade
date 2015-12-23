@@ -1,0 +1,51 @@
+extends _layout
+block variables
+	- var categories = (cats || [])
+
+block content
+	div.container#content
+		div.row
+			div.col-md-8.col-md-offset-2
+				div.panel.panel-default
+					div.panel-heading
+						h4= t("ns.post:form.title")
+					div.panel-body
+						form(action="/submit" enctype="multipart/form-data" method="POST")
+							div.form-group: span.message.text-danger(style= error ? "":"display:none")= error || ""
+							div.form-group.required
+								label= t("ns.post:form.label_title")
+								input.form-control(type='text', name='title',required)
+							div.form-group.required
+								label= t("ns.post:form.label_hoko")
+								input.form-control(type='text', name='hoko',required)
+								p.help-block= t("ns.post:form.hint_hoko")
+							div.form-group
+								label= t("ns.post:form.label_hoko_img")
+								input.form-control(type='file', name='hoko_img')
+							div.form-group.required
+								label= t("ns.post:form.label_tate")
+								input.form-control(type='text', name='tate',required)
+								p.help-block= t("ns.post:form.hint_tate")
+							div.form-group
+								label= t("ns.post:form.label_tate_img")
+								input.form-control(type='file', name='tate_img')
+							div.form-group
+								label= t("ns.post:form.label_answer")
+								input.form-control(type='text', name='answer')
+								p.help-block= t("ns.post:form.hint_answer")
+							div.form-group
+								label= t("ns.post:form.label_tags")
+								input.form-control(type='text', name='tags')
+								p.help-block= t("ns.post:form.hint_tags")
+							div.form-group
+								label= t("ns.post:form.label_days")
+								input.form-control(type='text', name='days')
+								p.help-block= t("ns.post:form.hint_days")
+							div.form-group
+								label= t("ns.post:form.label_category")
+								select.form-control(name="categoryId")
+									each cat in cats
+										option(value=cat.id)= cat["name_"+i18n.lng()]
+							input.btn.btn-submit(type='submit', name='submit', value= t("ns.post:form.btn_submit"))
+
+block javascript

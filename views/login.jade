@@ -1,0 +1,32 @@
+extends _layout
+block variables
+	- var categories = (cats || [])
+
+block content
+	div.container#content
+		div.row
+			div.col-md-8.col-md-offset-2
+				div.panel.panel-default
+					div.panel-heading
+						h4= t("ns.general:login.title")
+					div.panel-body
+						div.row
+							div.col-md-6
+								form(method="POST")
+									div.form-group: input.form-control(type='text', name='username', placeholder= t("ns.general:login.placeholder_username"))
+									div.form-group: input.form-control(type='password', name='password', placeholder= t("ns.general:login.placeholder_password"))
+									div.form-group: span.message.text-danger(style= error ? "":"display:none")= error || ""
+									input.btn.btn-submit(type='submit', name='login', value= t("ns.general:login.btn_login"),data-loading-text=t("ns.general:login.loading"))
+							div.col-md-6
+								div.social-login
+									a.btn.btn-block.btn-social.btn-facebook#fb-login
+										i.fa.fa-facebook
+										= t("ns.general:social_network.facebook_login")
+									a.btn.btn-block.btn-social.btn-google#g-login
+										i.fa.fa-google-plus
+										= t("ns.general:social_network.google_login")
+					div.panel-footer
+						a(href='/register')= t("ns.general:login.link_register")
+						|  - 
+						a(href='/password/forget')= t("ns.general:login.link_forgetpassword") 
+block javascript
